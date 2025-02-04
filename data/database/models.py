@@ -1,9 +1,11 @@
 from sqlalchemy import Integer, Column, ForeignKey, String, Text
 from sqlalchemy.ext.asyncio import AsyncAttrs, async_sessionmaker, create_async_engine
 from sqlalchemy.orm import DeclarativeBase
+from config_reader import config
 
 
-engine = create_async_engine("mysql+aiomysql://root@127.0.0.1:3306/database")
+connection = f"mysql+aiomysql://{config.db_user.get_secret_value()}@{config.db_address.get_secret_value()}/{config.db_name.get_secret_value()}"
+engine = create_async_engine(connection)
 async_session = async_sessionmaker(engine)
 
 

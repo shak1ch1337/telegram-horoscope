@@ -3,7 +3,8 @@ from aiogram.types import CallbackQuery
 from contextlib import suppress
 from aiogram.exceptions import TelegramBadRequest
 from keyboards import fabric, reply_kb
-from data.database.db_requests import get_all_signs, update_user_sign
+from data.database.db_requests_user import update_user_sign
+from data.database.db_requests_signs import get_all_signs
 
 
 router = Router()

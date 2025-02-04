@@ -1,7 +1,9 @@
 from aiogram import Router, F
 from aiogram.types import Message
 from keyboards import fabric
-from data.database.db_requests import select_one_user, get_one_sign, get_all_signs
+from data.database.db_requests_user import select_one_user
+from data.database.db_requests_signs import get_one_sign, get_all_signs
+from data.message_answers import ABOUT_BOT
 
 
 router = Router()
@@ -21,3 +23,8 @@ async def send_horoscope(message: Message):
         await message.answer(text = f"{sign_info.sign_name}\n{sign_info.content}")
     else:
         print("error")
+
+
+@router.message(F.text.lower() == "о боте")
+async def help(message: Message):
+    await message.answer(text = ABOUT_BOT)

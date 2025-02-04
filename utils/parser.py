@@ -1,7 +1,9 @@
 import requests
 from bs4 import BeautifulSoup
-from data.database.db_requests import get_all_signs, update_sign_content
+#from data.database.db_requests_signs import get_all_signs, update_sign_content
+from data.database.db_requests_signs import get_all_signs, update_sign_content
 from time import sleep
+import asyncio
 
 
 async def parsing():
@@ -16,4 +18,5 @@ async def parsing():
             format_content += f"\n{content.text}"
         await update_sign_content(sign[0], format_content)
         sleep(1)
+        #print("yes")
     return True
