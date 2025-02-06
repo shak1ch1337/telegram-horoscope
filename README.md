@@ -9,8 +9,8 @@ This telegram bot allows users to find out horoscope predictions based on their 
 
 ## Startup Instructions
 
-1 - Download the project
-2 - Create a .env file and fill in the following details:
+1. Download the project
+2. Create a .env file and fill in the following details:
 
 - BOT_TOKEN - your bot token
 - DB_ADDRESS - your database address
@@ -18,8 +18,8 @@ This telegram bot allows users to find out horoscope predictions based on their 
 - DB_USER - your database user
 - DB_PASSWORD - your database password
 
-3 - Uncomment async function "migration" in file "bot.py"
-4 - Start the bot
+3. Uncomment async function "migration" in file "bot.py"
+4. Start the bot
 
 ## Updates ans news
 
