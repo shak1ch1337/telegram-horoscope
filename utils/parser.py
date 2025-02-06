@@ -3,7 +3,6 @@ from bs4 import BeautifulSoup
 #from data.database.db_requests_signs import get_all_signs, update_sign_content
 from data.database.db_requests_signs import get_all_signs, update_sign_content
 from time import sleep
-import asyncio
 
 
 async def parsing():
