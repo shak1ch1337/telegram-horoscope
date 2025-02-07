@@ -32,11 +32,14 @@ async def cmd_help(message: Message):
 @router.message(Command("enable"))
 async def cmd_enable(message: Message):
     user = await select_one_user(message.from_user.id)
-    if user.send_state == 0:
-        state = await update_user_send_state(message.from_user.id, 1)
-        await message.answer(text = "Вы включили рассылку")
+    if user.sign_id == 1:
+        await message.answer(text = "Сначала выберите знак Зодиака")
     else:
-        await message.answer(text = "У вас уже включена рассылка")
+        if user.send_state == 0:
+            state = await update_user_send_state(message.from_user.id, 1)
+            await message.answer(text = "Вы включили рассылку")
+        else:
+            await message.answer(text = "У вас уже включена рассылка")
 
 
 @router.message(Command("disable"))
